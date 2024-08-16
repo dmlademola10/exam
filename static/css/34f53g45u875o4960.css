@@ -1,0 +1,49 @@
+/* for signin */
+.btn {
+    background-color: var(--btn-bg);
+    border: 0;
+    font-size: x-large;
+    text-align: center;
+    border-radius: 0.5rem;
+    margin: 10px auto;
+    display: block;
+}
+
+#msg {
+    height: 45px;
+    margin: auto;
+    width: auto;
+}
+
+.head {
+    user-select: none;
+    background-color: var(--div-bg);
+    text-align: center;
+    padding: 5px;
+}
+
+.head * {
+    margin: 0;
+}
+
+.com_name {
+    font-style: italic;
+}
+
+.signin_form,
+.signin_form input {
+    font-size: x-large;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}

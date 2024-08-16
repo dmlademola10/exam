@@ -1,0 +1,194 @@
+.content {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.admins {
+    /* background-color: var(--bgcolor-light);
+    border-radius: 1rem; */
+    flex: 1;
+}
+
+.admin {
+    background-color: rgb(235, 235, 235);
+    border-radius: 0.3rem;
+    padding: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+}
+
+.admin_name {
+    flex: 1;
+}
+
+.admin .admin_name h2 {
+    margin: 0;
+    white-space: wrap;
+    word-break: break-all;
+}
+
+.admin:hover {
+    background-color: rgb(194, 194, 194);
+}
+
+.action {
+    margin: 0 2px;
+}
+
+.act_btn {
+    display: inline-block;
+    margin: 0 2px;
+    background-color: var(--btn-bg);
+    cursor: pointer;
+    border-radius: 0.2rem;
+    padding: 5px;
+}
+
+.act_btn.del {
+    background-color: var(--danger);
+}
+
+.fscreen {
+    background-color: rgb(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.fscreen_cont {
+    display: none;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 10px;
+    box-shadow: 4px 4px 4px 4px rgb(31, 31, 31);
+}
+
+.close {
+    position: absolute;
+    font-size: xx-large;
+    top: 5px;
+    right: 15px;
+    z-index: 99;
+    color: white;
+    cursor: pointer;
+}
+
+.msg_box {
+    vertical-align: middle;
+    box-sizing: border-box;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    padding: 10px;
+    width: 400px;
+    left: 10px;
+    user-select: none;
+    cursor: default;
+    position: absolute;
+    z-index: 999;
+    bottom: 10px;
+    border-radius: 0.5rem;
+    color: rgb(1, 1, 34);
+    background-color: white;
+    border: 1px dotted rgb(1, 1, 34);
+}
+
+.msg_box span.close1 {
+    user-select: none;
+    color: rgb(1, 1, 34);
+    vertical-align: middle;
+    box-sizing: border-box;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    cursor: pointer;
+    float: right;
+}
+
+.msg_box .text1 {
+    user-select: none;
+    cursor: default;
+    color: rgb(1, 1, 34);
+    vertical-align: middle;
+    box-sizing: border-box;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
+    margin: 0;
+}
+
+.add_new {
+    background-color: var(--btn-bg);
+    border-radius: 0.2rem;
+    padding: 5px;
+    display: inline-block;
+    align-self: flex-start;
+    color: white;
+    cursor: pointer;
+}
+
+.add_new p {
+    margin: 0;
+    display: inline;
+}
+
+.input_group {
+    background-color: rgb(219, 219, 219);
+    border-radius: 0.3rem;
+    display: flex;
+    padding: 5px;
+}
+
+.input_group * {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+
+.input_group input,
+.input_group textarea {
+    flex: 1;
+    max-height: 100px;
+}
+
+.input_group textarea {
+    min-height: 50px;
+    min-width: 100%;
+    resize: vertical;
+}
+
+.input_group span.clear {
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.form_bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.form_bottom button {
+    background-color: var(--btn-bg);
+    border: 0;
+    border-radius: 0.2rem;
+    font-size: large;
+    cursor: pointer;
+    color: white;
+}
+
+.radio_group input[type=radio] {
+    margin: 0 0 0 10px;
+}
+
+form[name=new_admin] {
+    max-height: 100%;
+    overflow: auto;
+}

@@ -1,0 +1,98 @@
+{% extends './head.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css\23f87dh3jciu3hho39.css' %}" />
+{% endblock style %}
+
+{% block content %}
+<h2>Admins.</h2>
+<div class="add_new" id="add_new">
+    <span class="icon icon2"></span>
+    <p>ADD NEW ADMIN.</p>
+</div>
+<div class="admins" id="admins">
+    {% for admin in admins %}
+    <div class="admin" id="a{{admin.id}}">
+        <div class="admin_name">
+            <h2>{% autoescape off %}{{admin.name}}{% endautoescape %}</h2>
+        </div>
+        <div class="action">
+            <div class="act_btn edit" title="Edit.">
+                <span class="icon icon4"></span>
+            </div>
+            <div class="act_btn del" title="Delete.">
+                <span class="icon icon3"></span>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <h1>You have no admin.</h1>
+    {% endfor %}
+</div>
+<div class="fscreen" id="fscreen">
+    <span class="close" id="close" title="Close">&times;</span>
+    <div class="admin_view fscreen_cont" id="admin_view">
+        <h2 class="title"></h2>
+        <p class="announcer">Announced by <span id="announcer"></span> on <span id="datetime"></span></p>
+        <div class="details"></div>
+        <div class="action"></div>
+    </div>
+    <div class="new_admin fscreen_cont" id="new_admin">
+        <h2>New Admin.</h2>
+        <form name="new_admin" method="post" onsubmit="add_admin(event);">
+            {% csrf_token %}
+            <p class="message" id="message01"></p>
+            <label for="new_fullname">Full Name</label>
+            <div class="input_group">
+                <input name="new_fullname" id="new_fullname" autocomplete="off" />
+                <span class="icon icon5 clear" data-attachment="new_fullname"></span>
+            </div>
+            <label for="new_email">Email</label>
+            <div class="input_group">
+                <input name="new_email" id="new_email" autocomplete="off" />
+                <span class="icon icon5 clear" data-attachment="new_email"></span>
+            </div>
+            <label for="new_role">Role</label>
+            <div class="radio_group">
+                <input type="radio" name="new_role" value="a" id="a" checked /> <label for="a">Admin.</label><br />
+                <input type="radio" name="new_role" value="s" id="s" /> <label for="s">Super-Admin (Has the same priviledges as the Base Admin).</label>
+            </div>
+            <label for="access">Give access immediately</label>
+            <div class="radio_group">
+                <input type="radio" name="access" value="false" id="false" checked /> <label for="false">No, user will be given access later.</label><br />
+                <input type="radio" name="access" value="true" id="true" /> <label for="true">Yes, give this user access immediately.</label>
+            </div>
+            <div class="form_bottom">
+                <button type="reset" data-attachment="message01">CLEAR</button>
+                <button type="submit">SAVE</button>
+            </div>
+        </form>
+    </div>
+    <div class="edit_admin fscreen_cont" id="edit_admin">
+        <h2>Edit Announcement.</h2>
+        <form name="edit_admin" method="post" onsubmit="mod_admin(event);">
+            {% csrf_token %}
+            <p class="message" id="message02"></p>
+            <input type="hidden" name="edit_id" />
+            <label for="edit_title">Title</label>
+            <div class="input_group">
+                <input name="edit_title" id="edit_title" autocomplete="off" />
+                <span class="icon icon5 clear" data-attachment="edit_title"></span>
+            </div>
+            <label for="edit_details">Details</label>
+            <div class="input_group">
+                <textarea name="edit_details" id="edit_details" autocomplete="off"></textarea>
+            </div>
+            <div class="form_bottom">
+                <button type="reset" data-attachment="message02">CLEAR</button>
+                <button type="submit">SAVE</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/iu43hg854hg4jg984g9.js' %}"></script>
+{% endblock script %}

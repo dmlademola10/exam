@@ -1,0 +1,59 @@
+{% load static %}
+{# for admins #}
+<!DOCTYPE HTML>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width = device-width,initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/icons.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/themes/light.css' %}" />
+        {% block style %}{% endblock style %}
+        <title>Exam Online - {{ title }}.</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <div class="logo">
+                    {# <img src="{% if user.img %}{{user.img}}{% else %}{% static 'user_img.png' %}{% endif %}" alt="user_image" /> #}
+                    <h3 class="site_name">EXAM ONLINE.</h3>
+                </div>
+                <div class="nav" id="nav">
+                    <div class="nav_item" data-url="{% url 'dashboard' %}">Dashboard</div>
+                    <div class="nav_item" data-url="{% url 'announcements' %}">Announcements</div>
+                    <div class="nav_item" data-url="{% url 'admins' %}">Admins</div>
+                    <div class="nav_item" data-url="{% url 'dashboard' %}">Students</div>
+                    <div class="nav_item" data-url="{% url 'dashboard' %}">Waiting Room</div>
+                    <div class="nav_item" data-url="{% url 'dashboard' %}">Exams</div>
+                    <div class="nav_item" data-url="{% url 'dashboard' %}">Tests</div>
+                    <div class="nav_item" data-url="{% url 'dashboard' %}">Results</div>
+                    <div class="nav_item" data-url="{% url 'dashboard' %}">Enquiries/Complaints</div>
+                    <!-- <div class="nav_item">Settings</div> -->
+                    <div class="nav_item logout">Log Out</div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="top">
+                    <div class="hamburger" id="hamburger">
+                        <span class="icon icon1"></span>
+                    </div>
+                    <div class="user">
+                        <p class="name">{{user.name}}</p>
+                        <img title="Click to edit profile" src="{% if user.img %}{{user.img}}{% else %}{% static 'user_img.png' %}{% endif %}" alt="user_image" />
+                    </div>
+                </div>
+                <div class="content">
+                    {% block content %}
+                    Sorry, an error occurred!
+                    {% endblock content %}
+                </div>
+            </div>
+        </div>
+        <script src="{% static 'js/script.js' %}"></script>
+        {% block script %}{% endblock script %}
+    </body>
+
+</html>

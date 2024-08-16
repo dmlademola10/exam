@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width = device-width,initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/themes/light.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/34f53g45u875o4960.css' %}" />
+        <title>Exam Online - {{ title }}.</title>
+    </head>
+
+    <body>
+        <div class="head">
+            <h1 class="site_title">EXAM ONLINE.</h1>
+            <h6 class="com_name">...powered by INFINITECH.</h6>
+        </div>
+        <div class="main">
+            {% if func %}
+            <div class="div" style="flex-direction: column;">
+                <h1>SIGNED IN SUCCESSFULLY!</h1><br />
+                <p>Continue on the previous page.</p>
+            </div>
+            {% else %}
+            <div class="div">
+                <p style="font-size: 5vw; text-align: center; margin: 0;">SIGNIN<br />PANEL</p>
+            </div>
+            <div class="div">
+                <form name="signin" action="{% url 'signin' %}{% if fields.close %}?close={{fields.close}}{% endif %}" method="post" class="signin_form">
+                    {% csrf_token %}
+                    <div id="msg">{% if messages %}{% for message in messages %}{{message}}{% endfor %}{% endif %}</div>
+                    <label for="username">Username</label>
+                    <div class="input_group">
+                        <input id="username" type="text" name="username" value="{% if fields.username %}{{ fields.username }}{% endif %}" />
+                    </div>
+                    <label for="password">Password</label>
+                    <div class="input_group">
+                        <input id="password" type="password" name="password" value="" />
+                    </div>
+                    {% if fields.close %}<input type="hidden" name="close" value="{{ fields.close }}">{% endif %}
+                    <button type="submit" class="btn">SIGN IN</button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+        <!-- <script src="{% static 'js/script001.js' %}"></script>
+        <script src="{% static 'js/script001.js' %}"></script> -->
+    </body>
+
+</html>

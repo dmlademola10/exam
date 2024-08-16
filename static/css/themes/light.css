@@ -1,0 +1,11 @@
+:root {
+    --div-bg: rgb(181, 211, 252);
+    --div-bg-two: rgb(0, 86, 207);
+    --div-bg-two-hover: rgb(0, 40, 97);
+    --scrollbar: rgb(71, 71, 71);
+    --scrollbar-hover: rgb(0, 0, 0);
+    --btn-bg: rgb(26, 115, 232);
+    --alt-text: whitesmoke;
+    --danger: rgb(223, 0, 0);
+    --danger-hover: rgb(129, 0, 0);
+}

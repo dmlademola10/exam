@@ -1,0 +1,92 @@
+{% extends './head.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css\34iut09jio4394ut34t.css' %}" />
+{% endblock style %}
+
+{% block content %}
+<h2>Announcements.</h2>
+<div class="new_announcement" id="add_new">
+    <span class="icon icon2"></span>
+    <p>ADD NEW ANNOUNCEMENT.</p>
+</div>
+<div class="announcements" id="announcements">
+    {% for announcement in announcements %}
+    <div class="announcement" id="a{{announcement.id}}">
+        <div class="status">
+            {% if announcement.status == "new" %}
+            <div class="new" title="Unread Announcement."></div>
+            {% endif %}
+        </div>
+        <div class="ann_title">
+            <h2>{% autoescape off %}{{announcement.title}}{% endautoescape %}</h2>
+        </div>
+        <div class="action">
+            <div class="act_btn edit" title="Edit.">
+                <span class="icon icon4"></span>
+            </div>
+            <div class="act_btn del" title="Delete.">
+                <span class="icon icon3"></span>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <h1>You have no announcements.</h1>
+    {% endfor %}
+</div>
+<div class="fscreen" id="fscreen">
+    <span class="close" id="close" title="Close">&times;</span>
+    <div class="ann_view fscreen_cont" id="ann_view">
+        <h2 class="title"></h2>
+        <p class="announcer">Announced by <span id="announcer"></span> on <span id="datetime"></span></p>
+        <div class="details"></div>
+        <div class="action"></div>
+    </div>
+    <div class="new_ann fscreen_cont" id="new_ann">
+        <h2>New Announcement.</h2>
+        <form name="new_announcement" method="post" onsubmit="add_announcement(event);">
+            {% csrf_token %}
+            <p class="message" id="message01"></p>
+            <label for="new_title">Title</label>
+            <div class="input_group">
+                <input name="new_title" id="new_title" autocomplete="off" />
+                <span class="icon icon5 clear" data-attachment="new_title"></span>
+            </div>
+            <label for="new_details">Details</label>
+            <div class="input_group">
+                <textarea name="new_details" id="new_details" autocomplete="off"></textarea>
+            </div>
+            <div class="form_bottom">
+                <button type="reset" data-attachment="message01">CLEAR</button>
+                <button type="submit">SAVE</button>
+            </div>
+        </form>
+    </div>
+    <div class="edit_ann fscreen_cont" id="edit_ann">
+        <h2>Edit Announcement.</h2>
+        <form name="edit_announcement" method="post" onsubmit="mod_announcement(event);">
+            {% csrf_token %}
+            <p class="message" id="message02"></p>
+            <input type="hidden" name="edit_id" />
+            <label for="edit_title">Title</label>
+            <div class="input_group">
+                <input name="edit_title" id="edit_title" autocomplete="off" />
+                <span class="icon icon5 clear" data-attachment="edit_title"></span>
+            </div>
+            <label for="edit_details">Details</label>
+            <div class="input_group">
+                <textarea name="edit_details" id="edit_details" autocomplete="off"></textarea>
+            </div>
+            <div class="form_bottom">
+                <button type="reset" data-attachment="message02">CLEAR</button>
+                <button type="submit">SAVE</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/ihuw4y873yuihf87y94r.js' %}"></script>
+{% endblock script %}

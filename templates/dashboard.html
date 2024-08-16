@@ -1,0 +1,40 @@
+{% load static %}
+{#for non-admins#}
+<!DOCTYPE HTML>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{% static 'css/iurgejr54t4j59g4945.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/themes/light.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <title>Exam Online - {{ title }}.</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <div class="user">
+                    <img src="{% if user.img %}{{user.img}}{% else %}{% static 'user_img.png' %}{% endif %}" alt="user_image" />
+                    <p class="name">{{user.name}}</p>
+                </div>
+                <div class="nav">
+                    <div class="nav_item">Dashboard</div>
+                    <div class="nav_item">Announcements</div>
+                    <div class="nav_item">Exams</div>
+                    <div class="nav_item">Tests</div>
+                    <div class="nav_item">Results</div>
+                    <div class="nav_item">Make Enquiries/Complaints</div>
+                    <!-- <div class="nav_item">Settings</div> -->
+                    <div class="nav_item logout">Log Out</div>
+                </div>
+            </div>
+            <div class="main">
+
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,38 @@
+span.icon {
+    font-family: icons !important;
+}
+
+@font-face {
+    font-family: icons;
+    src: url(plugins/icons/fa-solid-900.ttf);
+}
+
+@font-face {
+    font-family: icons;
+    src: url(plugins/icons/fa-solid-900.woff2);
+}
+
+span.icon1::before {
+    /* hamburger */
+    content: "\f805";
+}
+
+span.icon2::before {
+    /* plus */
+    content: "\2b";
+}
+
+span.icon3::before {
+    /* trash-alt */
+    content: "\f2ed";
+}
+
+span.icon4::before {
+    /* pen-to-square */
+    content: "\f044";
+}
+
+span.icon5::before {
+    /* xmark */
+    content: "\f00d";
+}

@@ -1,0 +1,25 @@
+/* for dashboard(admin) */
+.content {
+    flex-direction: row;
+}
+
+.content_item {
+    /* flex-basis: 32%; */
+    min-width: 300px;
+    min-height: 165px;
+    margin: 2.5px;
+    flex: 1;
+    border-radius: 0.5rem;
+    background-color: var(--div-bg-two);
+    color: var(--alt-text);
+    text-align: center;
+    cursor: pointer;
+}
+
+.content_item p {
+    margin: 0;
+}
+
+.content_item:hover {
+    background-color: var(--div-bg-two-hover);
+}
